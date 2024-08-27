@@ -23,6 +23,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation(libs.guava)
+
+    // ORM dependencies
+    implementation("org.hibernate.orm:hibernate-core:6.6.0.Final")
+    implementation("jakarta.transaction:jakarta.transaction-api:2.0.1")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.2.0")
+    implementation("org.postgresql:postgresql:42.6.0")
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
