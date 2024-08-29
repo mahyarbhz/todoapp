@@ -36,11 +36,13 @@ public class Todo {
     /**
      * Constructs a new Todo object with the specified description, importance, and starred status.
      *
+     * @param id
      * @param todo        The description of the todo item.
      * @param importance  The importance level of the todo item.
      * @param starred     Indicates whether the todo item is starred.
      */
-    public Todo(String todo, int importance, boolean starred) {
+    public Todo(Long id, String todo, int importance, boolean starred) {
+        this.id = id;
         this.todo = todo;
         this.importance = importance;
         this.starred = starred;

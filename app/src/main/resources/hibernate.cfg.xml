@@ -13,6 +13,13 @@
         <property name="hibernate.format_sql">true</property>
         <property name="hibernate.highlight_sql">true</property>
 
+        <!-- Disable all Hibernate logging -->
+        <property name="hibernate.generate_statistics">false</property>
+        <property name="hibernate.use_identifier_rollback">false</property>
+        <property name="org.hibernate.SQL">error</property>
+        <property name="org.hibernate.type.descriptor.sql.BasicBinder">error</property>
+        <property name="org.hibernate.type.descriptor.sql.BasicExtractor">error</property>
+
         <!-- Entity classes -->
         <mapping class="todoapp.Todo"/>
     </session-factory>
