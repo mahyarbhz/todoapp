@@ -13,7 +13,7 @@ public class Todo {
      */
     @Id
     @GeneratedValue
-    private Long id;
+    private int id;
 
     /**
      * The description of the todo item.
@@ -41,7 +41,7 @@ public class Todo {
      * @param importance  The importance level of the todo item.
      * @param starred     Indicates whether the todo item is starred.
      */
-    public Todo(Long id, String todo, int importance, boolean starred) {
+    public Todo(int id, String todo, int importance, boolean starred) {
         this.id = id;
         this.todo = todo;
         this.importance = importance;
@@ -53,7 +53,7 @@ public class Todo {
      *
      * @return The unique identifier of the todo item.
      */
-    public Long getId() {
+    public int getId() {
         return id;
     }
 

@@ -12,7 +12,9 @@ plugins {
 
 repositories {
     // Use Maven Central for resolving dependencies.
+    gradlePluginPortal()
     mavenCentral()
+    maven(url = "https://jitpack.io")
 }
 
 dependencies {

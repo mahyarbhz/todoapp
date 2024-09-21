@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: todoapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+  
+  app:
+    build:
+      context: .
+      args:
+        CPU_COUNT: 4
+        MEMORY_LIMIT: 8g
+    container_name: todoapp
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL=jdbc:postgresql://db:5432/todoapp
+      - DATABASE_USERNAME=postgres
+      - DATABASE_PASSWORD=postgres
+    networks:
+      - mynet
+
+
+networks:
+  mynet:
+    driver: bridge
+
+volumes:
+  postgres_data: {}

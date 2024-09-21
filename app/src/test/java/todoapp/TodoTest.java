@@ -50,8 +50,8 @@ public class TodoTest {
      */
     @Test
     public void testCreateMultipleTodos() throws Exception {
-        Todo todo1 = new Todo("Todo 1", '0', false);
-        Todo todo2 = new Todo("Todo 2", '1', true);
+        Todo todo1 = new Todo(1, "Todo 1", '0', false);
+        Todo todo2 = new Todo(2, "Todo 2", '1', true);
 
         try {
             session.beginTransaction();
